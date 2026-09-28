@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Auto Escola Confiança - Formação de condutores em São Félix do Araguaia - MT. CNPJ: 65.297.969/0001-11. Aprenda a dirigir com segurança e qualidade.">
+    <meta name="keywords" content="auto escola, formação de condutores, CNH, São Félix do Araguaia, Mato Grosso, Auto Escola Confiança">
+    <meta name="author" content="Auto Escola Confiança">
+    <title>Auto Escola Confiança | Formação de Condutores</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- AOS Animate on Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #ffc107;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --gradient: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            padding: 15px 0;
+        }
+
+        .navbar.scrolled {
+            padding: 8px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #fff !important;
+        }
+
+        .navbar-brand i {
+            color: var(--secondary-color);
+            margin-right: 8px;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.8) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: #fff !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.9) 0%, rgba(10, 88, 202, 0.95) 100%),
+                        url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .btn-hero {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-hero-primary {
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            border: none;
+        }
+
+        .btn-hero-primary:hover {
+            background: #e0a800;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 193, 7, 0.4);
+        }
+
+        .btn-hero-outline {
+            border: 2px solid #fff;
+            color: #fff;
+            background: transparent;
+        }
+
+        .btn-hero-outline:hover {
+            background: #fff;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Floating Car Animation */
+        .floating-car {
+            position: absolute;
+            bottom: 20%;
+            right: 5%;
+            font-size: 8rem;
+            color: rgba(255,255,255,0.1);
+            animation: float 3s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+        }
+
+        /* About Section */
+        .about-img {
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .about-img:hover {
+            transform: scale(1.02);
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .about-feature:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(13, 110, 253, 0.15);
+        }
+
+        .about-feature .icon-box {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        .about-feature h5 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+
+        .about-feature p {
+            font-size: 0.95rem;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Services Section */
+        .services {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(13, 110, 253, 0.2);
+        }
+
+        .service-card .icon-circle {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.1) 0%, rgba(13, 110, 253, 0.05) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .icon-circle {
+            background: var(--gradient);
+            color: #fff;
+            transform: rotateY(180deg);
+        }
+
+        .service-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--gradient);
+            color: #fff;
+            padding: 80px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-item i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .stat-item .number {
+            font-size: 3rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1;
+        }
+
+        .stat-item p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+
+        /* Team/Why Choose Us */
+        .why-choose {
+            background: #fff;
+        }
+
+        .why-card {
+            display: flex;
+            align-items: center;
+            padding: 25px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .why-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 40px rgba(13, 110, 253, 0.15);
+        }
+
+        .why-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-right: 20px;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .why-card h5 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+
+        .why-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Gallery */
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(13, 110, 253, 0.8), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .gallery-item .overlay span {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .contact-info-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            height: 100%;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .contact-item i {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+
+        .contact-item h5 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+
+        .contact-item p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+
+        .contact-item a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .contact-form {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .contact-form .form-control {
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 12px 20px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+        }
+
+        .contact-form .form-label {
+            font-weight: 600;
+            color: var(--dark-color);
+            font-size: 0.9rem;
+        }
+
+        .btn-submit {
+            background: var(--gradient);
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(13, 110, 253, 0.4);
+            color: #fff;
+        }
+
+        /* Map */
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Privacy Policy Modal */
+        .modal-content {
+            border-radius: 20px;
+            border: none;
+        }
+
+        .modal-header {
+            background: var(--gradient);
+            color: #fff;
+            border-radius: 20px 20px 0 0;
+            padding: 20px 30px;
+        }
+
+        .modal-header .btn-close {
+            filter: brightness(0) invert(1);
+        }
+
+        .modal-body {
+            padding: 30px;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .modal-body h5 {
+            color: var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .modal-body p, .modal-body li {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: rgba(255,255,255,0.8);
+            padding: 60px 0 20px;
+        }
+
+        footer h5 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        footer p, footer a {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--secondary-color);
+        }
+
+        footer .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-5px);
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #25d366;
+            animation: pulse 2s infinite;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .floating-car {
+                font-size: 5rem;
+                bottom: 10%;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .floating-car {
+                display: none;
+            }
+
+            .stat-item .number {
+                font-size: 2.2rem;
+            }
+
+            .contact-form, .contact-info-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-car"></i> Auto Escola <span style="color: var(--secondary-color);">Confiança</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacidade</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-car">
+            <i class="fas fa-car-side"></i>
+        </div>
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <h1>Dirija com <span>Confiança</span>,<br>Conquiste sua <span>Liberdade</span></h1>
+                    <p>Sua autoescola em São Félix do Araguaia - MT. Formação de condutores com qualidade, segurança e profissionais experientes. Realize o sonho da sua CNH conosco!</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#contato" class="btn btn-hero btn-hero-primary">
+                            <i class="fas fa-id-card me-2"></i>Matricule-se Já
+                        </a>
+                        <a href="#servicos" class="btn btn-hero btn-hero-outline">
+                            <i class="fas fa-info-circle me-2"></i>Nossos Serviços
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1597007066704-67bf2068d5b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Aula de direção" class="img-fluid rounded-4 shadow-lg" style="border: 5px solid rgba(255,255,255,0.2);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="sobre">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sobre Auto Escola Confiança" class="img-fluid about-img">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="section-title">Sobre Nós</h2>
+                    <p class="section-subtitle">Conheça a Auto Escola Confiança</p>
+                    <p class="mb-4">A <strong>Auto Escola Confiança</strong> (E L da Silva Oliveira LTDA) é uma empresa especializada na <strong>formação de condutores</strong>, localizada em São Félix do Araguaia - MT. Nosso compromisso é oferecer um ensino de qualidade, preparando motoristas conscientes e responsáveis para o trânsito.</p>
+                    <p class="mb-4">Com uma equipe de instrutores experientes e uma frota moderna, garantimos um aprendizado completo, desde as aulas teóricas até as práticas, sempre com foco na segurança e na legislação de trânsito vigente.</p>
+
+                    <div class="about-feature" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+                        <div>
+                            <h5>Segurança em Primeiro Lugar</h5>
+                            <p>Metodologia focada na direção defensiva e prevenção de acidentes.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-feature" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon-box"><i class="fas fa-users"></i></div>
+                        <div>
+                            <h5>Instrutores Qualificados</h5>
+                            <p>Profissionais capacitados e pacientes, prontos para ensinar no seu ritmo.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-feature" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon-box"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h5>Horários Flexíveis</h5>
+                            <p>Aulas teóricas e práticas adaptadas à sua rotina.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-item">
+                        <i class="fas fa-user-graduate"></i>
+                        <div class="number" data-count="500">0</div>
+                        <p>Alunos Formados</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-item">
+                        <i class="fas fa-car"></i>
+                        <div class="number" data-count="10">0</div>
+                        <p>Veículos na Frota</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <div class="number" data-count="98">0</div>
+                        <p>% de Aprovação</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="stat-item">
+                        <i class="fas fa-calendar-check"></i>
+                        <div class="number" data-count="7">0</div>
+                        <p>Meses de Experiência</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicos">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title d-inline-block">Nossos Serviços</h2>
+                <p class="section-subtitle">Tudo o que você precisa para conquistar sua CNH</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="icon-circle"><i class="fas fa-id-card"></i></div>
+                        <h4>Primeira CNH</h4>
+                        <p>Formação completa para primeira habilitação nas categorias A (moto) e B (carro). Aulas teóricas e práticas com acompanhamento total.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="icon-circle"><i class="fas fa-sync-alt"></i></div>
+                        <h4>Mudança de Categoria</h4>
+                        <p>Adicione categorias à sua CNH, como A, B, AB, C, D ou E. Realizamos todo o processo de exames e aulas práticas.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="icon-circle"><i class="fas fa-book"></i></div>
+                        <h4>Aulas Teóricas</h4>
+                        <p>Curso teórico completo com material didático atualizado, simulados e preparação para a prova do DETRAN.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <div class="icon-circle"><i class="fas fa-car-side"></i></div>
+                        <h4>Aulas Práticas</h4>
+                        <p>Aulas de direção com veículos modernos e instrutores experientes. Aprenda no seu ritmo, com total segurança.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-card">
+                        <div class="icon-circle"><i class="fas fa-motorcycle"></i></div>
+                        <h4>Curso para Motos</h4>
+                        <p>Habilitação categoria A com aulas específicas para motocicletas. Aprenda as técnicas essenciais para pilotar com segurança.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-card">
+                        <div class="icon-circle"><i class="fas fa-file-alt"></i></div>
+                        <h4>Reciclagem e Atualização</h4>
+                        <p>Curso de reciclagem para condutores infratores e atualização de conhecimentos sobre legislação de trânsito.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h2 class="section-title">Por Que Nos Escolher?</h2>
+                    <p class="section-subtitle">Diferenciais da Auto Escola Confiança</p>
+                    <p>Na Auto Escola Confiança, seu aprendizado é nossa prioridade. Oferecemos um ambiente acolhedor, metodologia moderna e acompanhamento personalizado para que você conquiste sua habilitação com tranquilidade.</p>
+                    <a href="#contato" class="btn btn-hero btn-hero-primary mt-3">
+                        <i class="fas fa-phone me-2"></i>Fale Conosco
+                    </a>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="why-card">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h5>Metodologia Inovadora</h5>
+                            <p>Utilizamos técnicas modernas de ensino, combinando teoria e prática de forma eficiente.</p>
+                        </div>
+                    </div>
+                    <div class="why-card">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h5>Frota Moderna e Segura</h5>
+                            <p>Veículos revisados e equipados com duplo comando, garantindo segurança total nas aulas.</p>
+                        </div>
+                    </div>
+                    <div class="why-card">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h5>Atendimento Personalizado</h5>
+                            <p>Cada aluno é único. Adaptamos o ritmo das aulas às suas necessidades.</p>
+                        </div>
+                    </div>
+                    <div class="why-card">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h5>Localização Acessível</h5>
+                            <p>Estamos no Núcleo Embrião, em São Félix do Araguaia - MT, de fácil acesso.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-section" id="galeria" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title d-inline-block">Nossa Galeria</h2>
+                <p class="section-subtitle">Conheça um pouco do nosso dia a dia</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Aula de direção">
+                        <div class="overlay"><span><i class="fas fa-car me-2"></i>Aulas Práticas</span></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Carro">
+                        <div class="overlay"><span><i class="fas fa-road me-2"></i>Frota Moderna</span></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Estudante">
+                        <div class="overlay"><span><i class="fas fa-user-graduate me-2"></i>Alunos Aprovados</span></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Carro esportivo">
+                        <div class="overlay"><span><i class="fas fa-tachometer-alt me-2"></i>Direção Segura</span></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Carro">
+                        <div class="overlay"><span><i class="fas fa-star me-2"></i>Qualidade</span></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cidade">
+                        <div class="overlay"><span><i class="fas fa-map-marker-alt me-2"></i>São Félix do Araguaia</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contato">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title d-inline-block">Entre em Contato</h2>
+                <p class="section-subtitle">Estamos prontos para atender você</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="contact-info-card">
+                        <h4 class="mb-4"><i class="fas fa-address-card me-2 text-primary"></i>Informações de Contato</h4>
+
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h5>Endereço</h5>
+                                <p>Avenida Aldenor da Cunha, 00<br>Núcleo Embrião<br>São Félix do Araguaia - MT<br>CEP: 78670-000</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h5>Telefones</h5>
+                                <p>
+                                    <a href="tel:+5563999295421"><i class="fas fa-phone me-1"></i>(63) 99929-5421</a><br>
+                                    <a href="tel:+5563999929542"><i class="fas fa-phone me-1"></i>(63) 99992-9542</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h5>E-mail</h5>
+                                <p><a href="mailto:ntassessoriaecontabilidade@gmail.com">ntassessoriaecontabilidade@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h5>Horário de Atendimento</h5>
+                                <p>Segunda a Sexta: 08h às 18h<br>Sábado: 08h às 12h</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item mb-0">
+                            <i class="fas fa-building"></i>
+                            <div>
+                                <h5>Dados da Empresa</h5>
+                                <p>CNPJ: 65.297.969/0001-11<br>Razão Social: E L da Silva Oliveira LTDA<br>Nome Fantasia: Auto Escola Confiança</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="contact-form">
+                        <h4 class="mb-4"><i class="fas fa-paper-plane me-2 text-primary"></i>Envie sua Mensagem</h4>
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Nome Completo *</label>
+                                    <input type="text" class="form-control" placeholder="Seu nome" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Telefone/WhatsApp *</label>
+                                    <input type="tel" class="form-control" placeholder="(63) 99999-9999" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">E-mail</label>
+                                    <input type="email" class="form-control" placeholder="seu@email.com">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Serviço de Interesse</label>
+                                    <select class="form-control">
+                                        <option value="">Selecione...</option>
+                                        <option>Primeira CNH - Categoria A (Moto)</option>
+                                        <option>Primeira CNH - Categoria B (Carro)</option>
+                                        <option>Mudança de Categoria</option>
+                                        <option>Aulas Teóricas</option>
+                                        <option>Aulas Práticas</option>
+                                        <option>Reciclagem</option>
+                                        <option>Outros</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Mensagem *</label>
+                                    <textarea class="form-control" rows="5" placeholder="Como podemos ajudar?" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-submit">
+                                        <i class="fas fa-paper-plane me-2"></i>Enviar Mensagem
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="row mt-5" data-aos="fade-up">
+                <div class="col-12">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31546.847399434748!2d-50.68999999999999!3d-11.616666666666667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDM3JzAwLjAiUyA1MMKwNDEnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5><i class="fas fa-car me-2" style="color: var(--secondary-color);"></i>Auto Escola Confiança</h5>
+                    <p>Sua autoescola em São Félix do Araguaia - MT. Formação de condutores com qualidade, segurança e confiança. Realize o sonho da sua CNH conosco!</p>
+                    <div class="social-links mt-3">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Início</a></li>
+                        <li class="mb-2"><a href="#sobre"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Sobre</a></li>
+                        <li class="mb-2"><a href="#servicos"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Serviços</a></li>
+                        <li class="mb-2"><a href="#galeria"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Galeria</a></li>
+                        <li class="mb-2"><a href="#contato"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Serviços</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#servicos"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Primeira CNH</a></li>
+                        <li class="mb-2"><a href="#servicos"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Mudança de Categoria</a></li>
+                        <li class="mb-2"><a href="#servicos"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Aulas Teóricas</a></li>
+                        <li class="mb-2"><a href="#servicos"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Aulas Práticas</a></li>
+                        <li class="mb-2"><a href="#servicos"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Reciclagem</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contato</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Avenida Aldenor da Cunha, 00<br>Núcleo Embrião<br>São Félix do Araguaia - MT</p>
+                    <p><i class="fas fa-phone me-2"></i>(63) 99929-5421</p>
+                    <p><i class="fas fa-envelope me-2"></i>ntassessoriaecontabilidade@gmail.com</p>
+                    <p><i class="fas fa-id-card me-2"></i>CNPJ: 65.297.969/0001-11</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mb-0">&copy; 2026 Auto Escola Confiança - E L da Silva Oliveira LTDA. Todos os direitos reservados. | <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Política de Privacidade</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5563999295421?text=Olá! Gostaria de mais informações sobre a Auto Escola Confiança." class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyModalLabel"><i class="fas fa-shield-alt me-2"></i>Política de Privacidade</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Última atualização:</strong> 2026</p>
+                    <p>A <strong>Auto Escola Confiança</strong> (E L da Silva Oliveira LTDA), inscrita no CNPJ 65.297.969/0001-11, valoriza a privacidade e a segurança dos dados pessoais de seus clientes e visitantes. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos suas informações.</p>
+
+                    <h5>1. Coleta de Informações</h5>
+                    <p>Coletamos informações pessoais fornecidas voluntariamente por você, como nome, telefone, e-mail e mensagens enviadas através de nossos formulários de contato. Também podemos coletar dados de navegação, como endereço IP e páginas visitadas, para melhorar sua experiência em nosso site.</p>
+
+                    <h5>2. Uso das Informações</h5>
+                    <p>Utilizamos seus dados para:</p>
+                    <ul>
+                        <li>Responder a solicitações de contato e informações sobre nossos serviços;</li>
+                        <li>Processar matrículas e inscrições em cursos;</li>
+                        <li>Enviar comunicações sobre promoções, novidades e atualizações;</li>
+                        <li>Melhorar nossos serviços e a experiência do usuário em nosso site.</li>
+                    </ul>
+
+                    <h5>3. Compartilhamento de Dados</h5>
+                    <p>Não vendemos, alugamos ou compartilhamos suas informações pessoais com terceiros, exceto quando necessário para cumprir obrigações legais ou regulatórias, ou com seu consentimento explícito.</p>
+
+                    <h5>4. Segurança dos Dados</h5>
+                    <p>Adotamos medidas técnicas e administrativas para proteger seus dados contra acesso não autorizado, alteração, divulgação ou destruição. No entanto, nenhum método de transmissão pela internet é 100% seguro, e não podemos garantir segurança absoluta.</p>
+
+                    <h5>5. Seus Direitos</h5>
+                    <p>De acordo com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018), você tem o direito de:</p>
+                    <ul>
+                        <li>Confirmar a existência de tratamento de seus dados;</li>
+                        <li>Acessar seus dados pessoais;</li>
+                        <li>Corrigir dados incompletos, inexatos ou desatualizados;</li>
+                        <li>Solicitar a anonimização, bloqueio ou eliminação de dados desnecessários;</li>
+                        <li>Revogar o consentimento a qualquer momento.</li>
+                    </ul>
+                    <p>Para exercer seus direitos, entre em contato conosco através do e-mail: ntassessoriaecontabilidade@gmail.com</p>
+
+                    <h5>6. Cookies</h5>
+                    <p>Nosso site pode utilizar cookies para melhorar a navegação e personalizar conteúdo. Você pode configurar seu navegador para recusar cookies, mas isso pode afetar algumas funcionalidades do site.</p>
+
+                    <h5>7. Alterações nesta Política</h5>
+                    <p>Reservamo-nos o direito de atualizar esta Política de Privacidade a qualquer momento. Recomendamos que você revise periodicamente esta página para se manter informado sobre como protegemos seus dados.</p>
+
+                    <h5>8. Contato</h5>
+                    <p>Em caso de dúvidas sobre esta Política de Privacidade, entre em contato:</p>
+                    <p>
+                        <strong>Auto Escola Confiança</strong><br>
+                        CNPJ: 65.297.969/0001-11<br>
+                        Endereço: Avenida Aldenor da Cunha, 00 - Núcleo Embrião, São Félix do Araguaia - MT, CEP 78670-000<br>
+                        Telefone: (63) 99929-5421<br>
+                        E-mail: ntassessoriaecontabilidade@gmail.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target && this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Counter animation for stats
+        const counters = document.querySelectorAll('.number');
+        const speed = 200;
+
+        const animateCounter = (counter) => {
+            const target = +counter.getAttribute('data-count');
+            const count = +counter.innerText;
+            const increment = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(() => animateCounter(counter), 1);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        // Intersection Observer for counters
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.number');
+                    counters.forEach(counter => {
+                        if (counter.innerText === '0') {
+                            animateCounter(counter);
+                        }
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Enviando...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check me-2"></i>Mensagem Enviada!';
+                btn.classList.remove('btn-submit');
+                btn.classList.add('btn', 'btn-success');
+                btn.style.borderRadius = '50px';
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    btn.classList.remove('btn', 'btn-success');
+                    btn.classList.add('btn-submit');
+                    btn.style.borderRadius = '';
+                    this.reset();
+                }, 3000);
+            }, 1500);
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
